@@ -35,11 +35,12 @@
         </nav>
     </div>
 </template>
-  
+
 <script setup>
 import { ref, computed, onMounted, defineProps } from 'vue';
 import { useRecipeStore } from '@/stores/recipeStore';
 import { useRouter } from 'vue-router';
+import Sidebar from '../components/Sidebar.vue';
 
 const router = useRouter();
 const recipeStore = useRecipeStore();
