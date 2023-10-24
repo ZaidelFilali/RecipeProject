@@ -1,46 +1,48 @@
 <template>
     <div>
-        <Sidebar @search="performSearch" />
-        <div class="container" style="margin-top: 20px;">
+        <Navbar @search="performSearch" />
+        <div class="container mt-4">
             <div class="row">
                 <div v-for="(recipe, index) in displayedRecipes" :key="index" class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="recipe-card card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ recipe.name }}</h5>
-                            <p class="card-text">{{ recipe.shortDescription }}</p>
-                            <button @click="viewRecipeDetails(recipe)" class="btn btn-primary spaced-button">View
-                                Details</button>
-                            <router-link :to="'/edit/' + recipe.id"
-                                class="btn btn-primary edit-button spaced-button">Edit</router-link>
-                            <button @click="deleteRecipe(recipe.id)" class="btn btn-danger">Delete</button>
+                            <h5 class="card-title text-primary">{{ recipe.name }}</h5>
+                            <p class="card-text mt-3">{{ recipe.shortDescription }}</p>
+                                <div class="button-group d-flex justify-content-between mt-3">
+                                    <button @click="viewRecipeDetails(recipe)" class="btn btn-outline-primary">View
+                                        Details</button>
+                                    <router-link :to="'/edit/' + recipe.id"
+                                        class="btn btn-outline-secondary">Edit</router-link>
+                                    <button @click="deleteRecipe(recipe.id)" class="btn btn-outline-danger">Delete</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="text-center" v-if="totalPages > 1">
-        <nav>
-            <ul class="pagination">
-                <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                    <a class="page-link" @click="changePage(currentPage - 1)">Previous</a>
-                </li>
-                <li class="page-item" v-for="page in totalPages" :key="page" :class="{ active: page === currentPage }">
-                    <a class="page-link" @click="changePage(page)">{{ page }}</a>
-                </li>
-                <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-                    <a class="page-link" @click="changePage(currentPage + 1)">Next</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <div class="text-center mt-4" v-if="totalPages > 1">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item" :class="{ disabled: currentPage === 1 }">
+                        <a class="page-link" @click="changePage(currentPage - 1)">Previous</a>
+                    </li>
+                    <li class="page-item" v-for="page in totalPages" :key="page" :class="{ active: page === currentPage }">
+                        <a class="page-link">{{ page }}</a>
+                    </li>
+                    <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+                        <a class="page-link" @click="changePage(currentPage + 1)">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 </template>
-
+  
 <script setup>
 import { ref, computed, onMounted, defineProps } from 'vue';
 import { useRecipeStore } from '@/stores/recipeStore';
 import { useRouter } from 'vue-router';
-import Sidebar from '../components/Sidebar.vue';
+import Navbar from '../components/Navbar.vue';
 
 const router = useRouter();
 const recipeStore = useRecipeStore();
@@ -94,16 +96,55 @@ onMounted(() => {
 </script>
   
 <style scoped>
-.spaced-button {
-    margin-right: 40px;
+.recipe-card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
-</style>
-  
-  
-<style scoped>
-.spaced-button {
-    margin-right: 40px;
-}
-</style>
 
-  
+.card-title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.recipe-icons {
+    display: flex;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.page-link {
+    color: #007bff;
+    background-color: transparent;
+    border: 1px solid #007bff;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+</style>
