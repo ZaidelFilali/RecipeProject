@@ -22,10 +22,6 @@
                             <a class="dropdown-item" href="https://www.snapchat.com/add/your_snapchat"
                                 target="_blank">Snapchat</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item dropdown-toggle" href="#" id="moreSocialDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                More Social
-                            </a>
                             <div class="dropdown-menu light-navbar-dropdown" aria-labelledby="moreSocialDropdown">
                                 <a class="dropdown-item" href="https://twitter.com/your_twitter" target="_blank">Twitter</a>
                                 <a class="dropdown-item" href="https://www.pinterest.com/your_pinterest"

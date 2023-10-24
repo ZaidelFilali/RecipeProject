@@ -8,6 +8,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-primary">{{ recipe.name }}</h5>
                             <p class="card-text mt-3">{{ recipe.shortDescription }}</p>
+                            <div class="recipe-details d-flex justify-content-between align-items-center">
                                 <div class="button-group d-flex justify-content-between mt-3">
                                     <button @click="viewRecipeDetails(recipe)" class="btn btn-outline-primary">View
                                         Details</button>
@@ -36,6 +37,28 @@
                 </ul>
             </nav>
         </div>
+        <footer class="footer mt-4 p-4 text-center">
+            <div class="container">
+                <p class="text-muted">Discover more delicious recipes and cooking tips at </p>
+                <a href="#" class="btn btn-primary btn-lg">Get Cooking Inspiration</a>
+                <div class="social-icons mt-3">
+                    <a href="https://www.instagram.com/your_instagram" target="_blank">
+                        <img src="../assets/" alt="Instagram" class="social-logo" />
+                    </a>
+                    <a href="https://github.com/your_github" target="_blank">
+                        <img src="../assets/github.png" alt="GitHub" class="social-logo" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/your_linkedin" target="_blank">
+                        <img src="../assets/linkedin.png" alt="LinkedIn" class="social-logo" />
+                    </a>
+                    <a href="https://www.snapchat.com/add/your_snapchat" target="_blank">
+                        <img src="../assets/snapchat.jpg" alt="Snapchat" class="social-logo" />
+                    </a>
+                </div>
+                <p>&copy; 2023 Alpina's Recipes</p>
+            </div>
+        </footer>
+    </div>
 </template>
   
 <script setup>
@@ -147,4 +170,28 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.social-logo:hover {
+    filter: brightness(1.2);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 </style>
