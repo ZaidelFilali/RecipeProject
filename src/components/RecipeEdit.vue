@@ -26,7 +26,7 @@
                     <ul class="list-group">
                         <li v-for="(nutrition, index) in formData.nutritionValues" :key="index" class="list-group-item">
                             <input v-model="nutrition.name" type="text" class="form-control" placeholder="Nutrition Name"
-                            :disabled="true">
+                                :disabled="true">
                             <input v-model="nutrition.value" type="text" class="form-control" placeholder="Value">
                         </li>
                     </ul>
@@ -59,6 +59,7 @@
                     <router-link to="/" class="btn btn-secondary ms-2">Cancel</router-link>
                 </div>
             </form>
+            <router-link to="/" class="back-to-home">Return to Home</router-link>
         </div>
     </div>
 </template>
@@ -117,5 +118,23 @@ const addNutritionValue = () => {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-home {
+    position: absolute;
+    top: 5px;
+    left: 1500px;
+    background-color: #2c5e94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    background-color: #0056b3;
 }
 </style>

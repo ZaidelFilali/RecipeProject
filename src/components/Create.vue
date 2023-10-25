@@ -48,6 +48,7 @@
         </div>
       </div>
       <button type="submit" class="submit-button">{{ editing ? 'Update Recipe' : 'Add Recipe' }}</button>
+      <router-link to="/" class="back-to-home">Return to Home</router-link>
     </form>
   </div>
 </template>
@@ -261,4 +262,22 @@ textarea::placeholder {
 
 .image-upload-button:hover {
   background-color: #0056b3;
-}</style>
+}
+.back-to-home {
+  position: absolute;
+    top: 5px;
+    left: 1500px;
+    background-color: #2c5e94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    background-color: #0056b3;
+}
+</style>

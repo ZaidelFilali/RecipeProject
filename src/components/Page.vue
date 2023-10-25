@@ -123,13 +123,6 @@ onMounted(() => {
 .spaced-button {
     margin-right: 40px;
 }
-</style>
-  
-  
-<style scoped>
-.spaced-button {
-    margin-right: 40px;
-}
 
 .card-text {
     font-size: 1rem;

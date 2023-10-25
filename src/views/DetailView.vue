@@ -70,4 +70,22 @@ onMounted(() => {
 .p-4.mb-2.bg-body-tertiary.rounded-3 {
     padding: 1rem;
 }
+
+.back-to-home {
+  position: absolute;
+    top: 5px;
+    left: 1500px;
+    background-color: #2c5e94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    background-color: #0056b3;
+}
 </style>
