@@ -31,24 +31,13 @@
                         </router-link>
                     </li>
                 </ul>
-                <!-- <div class="search-container">
-                    <input v-model="searchQuery" @input="emitSearchQuery" class="search-input"
-                        placeholder="Search for recipes" />
-                </div> -->
             </div>
         </div>
     </nav>
 </template>
 
 <script setup>
-// import { ref, defineEmits } from 'vue';
 
-// const emit = defineEmits();
-// const searchQuery = ref('');
-
-// const emitSearchQuery = () => {
-//     emit('search', searchQuery.value);
-// };
 </script>
 
 <style scoped>

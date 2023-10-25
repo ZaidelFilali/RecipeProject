@@ -1,7 +1,6 @@
 <template>
     <div>
-        <!-- <Navbar @search="performSearch" /> -->
-        Searvh
+        <Searchbar @search="performSearch" />
         <div class="container mt-4">
             <div class="row">
                 <div v-for="(recipe, index) in displayedRecipes" :key="index" class="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -67,6 +66,7 @@
 import { ref, computed, onMounted, defineProps } from 'vue';
 import { useRecipeStore } from '@/stores/recipeStore';
 import { useRouter } from 'vue-router';
+import Searchbar from './Searchbar.vue';
 
 const router = useRouter();
 const recipeStore = useRecipeStore();
