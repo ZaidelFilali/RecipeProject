@@ -9,7 +9,7 @@
                 </div>
                 <div class="mb-2">
                     <label for="shortDescription" class="form-label">Short Description:</label>
-                    <input type="text" id="shortDescription" v-model="formData.shortDescription" class="form-control">
+                    <input type text id="shortDescription" v-model="formData.shortDescription" class="form-control">
                 </div>
                 <div class="mb-2">
                     <label for="preparationTime" class="form-label">Preparation Time (minutes):</label>
@@ -17,7 +17,7 @@
                         required>
                 </div>
                 <div class="mb-2">
-                    <label for= "calories" class="form-label">Calories:</label>
+                    <label for="calories" class="form-label">Calories:</label>
                     <input type="number" id="calories" v-model="formData.calories" class="form-control" required>
                 </div>
 
@@ -26,11 +26,10 @@
                     <ul class="list-group">
                         <li v-for="(nutrition, index) in formData.nutritionValues" :key="index" class="list-group-item">
                             <input v-model="nutrition.name" type="text" class="form-control" placeholder="Nutrition Name"
-                                :disabled="true">
+                            :disabled="true">
                             <input v-model="nutrition.value" type="text" class="form-control" placeholder="Value">
                         </li>
                     </ul>
-                    <button @click.prevent="addNutritionValue" class="btn btn-primary mt-2">Add Nutrition Value</button>
                 </div>
 
                 <div class="mb-2">
@@ -48,7 +47,8 @@
                     <label class="form-label">Instructions:</label>
                     <ol class="list-group">
                         <li v-for="(instruction, index) in formData.instructions" :key="index" class="list-group-item">
-                            <input v-model="instruction.text" type="text" class="form-control" placeholder="Step">
+                            <input v-model="formData.instructions[index].text" type="text" class="form-control"
+                                placeholder="Step">
                         </li>
                     </ol>
                     <button @click.prevent="addInstruction" class="btn btn-primary mt-2">Add Instruction</button>

@@ -1,6 +1,6 @@
 import './assets/main.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import "bootstrap/dist/js/bootstrap.js";
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 
@@ -10,10 +10,9 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 const app = createApp(App)
 const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate);
 
-app.use(createPinia())
+app.use(pinia)
 app.use(router)
 
 app.mount('#app')
-pinia.use(piniaPluginPersistedstate);
-import "bootstrap/dist/js/bootstrap.js";

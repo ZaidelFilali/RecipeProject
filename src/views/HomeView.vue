@@ -10,10 +10,9 @@ import Sidebar from '../components/Sidebar.vue';
 import Page from '../components/Page.vue';
 import { ref } from 'vue';
 
-const searchQuery = ref('');
+// const searchQuery = ref('');
 
-const performSearch = (query) => {
-    searchQuery.value = query; 
-};
-
+// const performSearch = (query) => {
+//     searchQuery.value = query;
+// };
 </script>
