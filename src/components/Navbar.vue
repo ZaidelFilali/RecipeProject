@@ -36,10 +36,6 @@
     </nav>
 </template>
 
-<script setup>
-
-</script>
-
 <style scoped>
 .light-navbar-dropdown {
     padding: 10px 20px;
