@@ -59,7 +59,7 @@ export const useRecipeStore = defineStore('recipes', {
         id: 3
       },
       {
-        name: 'Test Recipe 1', 
+        name: 'Test Recipe 1',
         shortDescription: 'This is a test recipe with some instructions.',
         instructions: [
           'Step 1: Do something.',
@@ -73,10 +73,10 @@ export const useRecipeStore = defineStore('recipes', {
           { name: 'Ingredient B', quantity: '1 cup' },
         ],
         images: [],
-        id: 4, 
+        id: 4,
       },
       {
-        name: 'Test Recipe 2', 
+        name: 'Test Recipe 2',
         shortDescription: 'Another test recipe for you to enjoy.',
         instructions: [
           'Step 1: Start by doing this.',
@@ -90,7 +90,7 @@ export const useRecipeStore = defineStore('recipes', {
           { name: 'Ingredient Y', quantity: '2 cups' },
         ],
         images: [],
-        id: 5, 
+        id: 5,
       },
     ],
     images: [],
@@ -130,7 +130,6 @@ export const useRecipeStore = defineStore('recipes', {
       return this.recipes.filter((recipe) => recipe.name.toLowerCase().includes(title.toLowerCase()));
     },
   },
-  
   persist: true,
 });
 

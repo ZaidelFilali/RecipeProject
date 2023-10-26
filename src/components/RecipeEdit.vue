@@ -17,7 +17,7 @@
                         required>
                 </div>
                 <div class="mb-2">
-                    <label for= "calories" class="form-label">Calories:</label>
+                    <label for="calories" class="form-label">Calories:</label>
                     <input type="number" id="calories" v-model="formData.calories" class="form-control" required>
                 </div>
 
@@ -30,7 +30,6 @@
                             <input v-model="nutrition.value" type="text" class="form-control" placeholder="Value">
                         </li>
                     </ul>
-                    <button @click.prevent="addNutritionValue" class="btn btn-primary mt-2">Add Nutrition Value</button>
                 </div>
 
                 <div class="mb-2">
@@ -48,7 +47,8 @@
                     <label class="form-label">Instructions:</label>
                     <ol class="list-group">
                         <li v-for="(instruction, index) in formData.instructions" :key="index" class="list-group-item">
-                            <input v-model="instruction.text" type="text" class="form-control" placeholder="Step">
+                            <input v-model="formData.instructions[index].text" type="text" class="form-control"
+                                placeholder="Step">
                         </li>
                     </ol>
                     <button @click.prevent="addInstruction" class="btn btn-primary mt-2">Add Instruction</button>
@@ -59,6 +59,7 @@
                     <router-link to="/" class="btn btn-secondary ms-2">Cancel</router-link>
                 </div>
             </form>
+            <router-link to="/" class="back-to-home">Return to Home</router-link>
         </div>
     </div>
 </template>
@@ -117,5 +118,23 @@ const addNutritionValue = () => {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-home {
+    position: absolute;
+    top: 5px;
+    left: 1500px;
+    background-color: #2c5e94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    background-color: #0056b3;
 }
 </style>
