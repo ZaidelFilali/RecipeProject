@@ -1,14 +1,5 @@
 import { defineStore } from 'pinia';
 
-export const useStore = defineStore('store', {
-  state: () => {
-    return {
-      someState: 'hello pinia',
-    }
-  },
-  persist: true,
-})
-
 export const useRecipeStore = defineStore('recipes', {
   state: () => ({
     recipes: [
