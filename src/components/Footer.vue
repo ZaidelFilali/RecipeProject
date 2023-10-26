@@ -22,14 +22,8 @@
         </div>
     </footer>
 </template>
-
+  
 <style scoped>
-.footer-container {
-    background-color: #d8d8d8;
-    color: white;
-    width: 100%;
-} 
-
 .social-icons {
     display: flex;
     align-items: center;
@@ -48,3 +42,4 @@
     filter: brightness(1.2);
 }
 </style>
+  
