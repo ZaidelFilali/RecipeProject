@@ -22,21 +22,11 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4" v-if="totalPages > 1">
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                        <a class="page-link" @click="changePage(currentPage - 1)">Previous</a>
-                    </li>
-                    <li class="page-item" v-for="page in totalPages" :key="page" :class="{ active: page === currentPage }">
-                        <a class="page-link">{{ page }}</a>
-                    </li>
-                    <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-                        <a class="page-link" @click="changePage(currentPage + 1)">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+
+        <nav class="pagination-container" v-if="totalPages > 1">
+            <Pagination :currentPage="currentPage" :totalPages="totalPages" :changePage="changePage" />
+        </nav>
+
         <footer class="footer mt-4 p-4 text-center">
             <div class="container">
                 <p class="text-muted">Discover more delicious recipes and cooking tips at </p>
@@ -60,12 +50,13 @@
         </footer>
     </div>
 </template>
-  
+
 <script setup>
 import { ref, computed, onMounted, defineProps } from 'vue';
 import { useRecipeStore } from '@/stores/recipeStore';
 import { useRouter } from 'vue-router';
 import Navbar from '../components/Navbar.vue';
+import Pagination from './Pagination.vue';
 
 const router = useRouter();
 const recipeStore = useRecipeStore();
@@ -117,7 +108,7 @@ onMounted(() => {
     currentPage.value = 1;
 });
 </script>
-  
+
 <style scoped>
 .recipe-card {
     border: 1px solid #e0e0e0;
@@ -142,6 +133,12 @@ onMounted(() => {
 .button-group {
     display: flex;
     justify-content: space-between;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .pagination {
@@ -193,5 +190,4 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
 </style>
