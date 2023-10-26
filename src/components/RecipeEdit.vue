@@ -9,7 +9,7 @@
                 </div>
                 <div class="mb-2">
                     <label for="shortDescription" class="form-label">Short Description:</label>
-                    <input type text id="shortDescription" v-model="formData.shortDescription" class="form-control">
+                    <input type="text" id="shortDescription" v-model="formData.shortDescription" class="form-control">
                 </div>
                 <div class="mb-2">
                     <label for="preparationTime" class="form-label">Preparation Time (minutes):</label>
