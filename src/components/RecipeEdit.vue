@@ -61,6 +61,7 @@
             </form>
         </div>
     </div>
+    <router-link to="/" class="back-to-home">Return to Home</router-link>
 </template>
 
 <script setup>
