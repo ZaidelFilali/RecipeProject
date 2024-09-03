@@ -1,8 +1,7 @@
-
 <template>
     <Navbar />
     <slot />
-    FOOTER
+   <footer/>
 </template>
 
 <script setup >
